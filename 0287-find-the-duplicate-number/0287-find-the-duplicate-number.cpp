@@ -24,7 +24,19 @@ public:
         return -1;
     }
 
+    int negativeMarkingMethod(vector<int>& nums) {
+        for (int i=0; i<nums.size(); i++) {
+            int index = abs(nums[i]);
+            if (nums[index] < 0)
+                return index;
+            else {
+                nums[index] = -nums[index];
+            }
+        }
+        return -1;
+    }
+
     int findDuplicate(vector<int>& nums) {
-        return usingCounterArray(nums);
+        return negativeMarkingMethod(nums);
     }
 };
