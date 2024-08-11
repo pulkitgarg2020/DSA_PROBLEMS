@@ -4,9 +4,6 @@ public:
         int dup = 1;
         int in = 1;
         while (dup < nums.size()) {
-            // Store the number
-            int unique = nums[dup];
-
             if (nums[dup] != nums[dup - 1]) {
                 // Store the elem at the index in the nums array
                 nums[in++] = nums[dup];
