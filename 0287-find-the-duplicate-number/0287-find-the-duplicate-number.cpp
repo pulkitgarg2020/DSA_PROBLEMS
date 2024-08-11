@@ -9,7 +9,22 @@ public:
         return 0;
     }
 
+    int usingCounterArray(vector<int>& nums) {
+        vector<int> counter(nums.size(), 0);
+
+        for (int i=0; i<nums.size(); i++) {
+            counter[nums[i]]++;
+        }
+        
+        for (int i=0; i<counter.size(); i++) {
+            if (counter[i] > 1) 
+                return i;
+        }
+
+        return -1;
+    }
+
     int findDuplicate(vector<int>& nums) {
-        return usingSort(nums);
+        return usingCounterArray(nums);
     }
 };
