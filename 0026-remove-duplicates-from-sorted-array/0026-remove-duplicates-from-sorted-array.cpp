@@ -11,10 +11,7 @@ public:
             while (dup < nums.size() && nums[dup] == unique) {
                 dup++;
             }
-
-            cout << "DUP: " << dup << endl;
             
-            cout << "IN: " << in << endl;
             nums[in] = unique;
             in++;
         }
