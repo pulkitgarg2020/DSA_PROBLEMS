@@ -29,9 +29,7 @@ public:
             int index = abs(nums[i]);
             if (nums[index] < 0)
                 return index;
-            else {
-                nums[index] = -nums[index];
-            }
+            nums[index] = -nums[index];
         }
         return -1;
     }
