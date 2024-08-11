@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSumBruteForce(vector<int>& nums, int target) {
         vector<int> ans;
         for (int i=0; i<nums.size(); i++) {
             for (int j=i+1; j<nums.size(); j++) {
@@ -12,5 +12,8 @@ public:
             }
         }
         return ans;
+    }
+    vector<int> twoSum(vector<int>& nums, int target) {
+        return twoSumBruteForce(nums, target);
     }
 };
