@@ -27,8 +27,9 @@ public:
         int r = nums_sorted.size() - 1;
         while (l < r) {
             int sum = nums_sorted[l] + nums_sorted[r];
-            if (sum > target)
+            if (sum > target) {
                 r--;
+            }
             else if (sum < target)
                 l++;
             else {
@@ -40,7 +41,7 @@ public:
             if (nums[i] == nums_sorted[l])
                 ans.push_back(i);
             else if (nums[i] == nums_sorted[r])
-                ans.push_back(r);
+                ans.push_back(i);
         }
         return ans;
     }
