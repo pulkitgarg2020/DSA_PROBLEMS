@@ -1,6 +1,7 @@
 class Solution {
 public:
-    vector<int> findDisappearedNumbers(vector<int>& nums) {
+
+    vector<int> negativeMarking(vector<int>& nums) {
         int n = nums.size();
         vector<int> ans;
 
@@ -16,5 +17,30 @@ public:
                 ans.push_back(j+1);
         }
         return ans;
+    }
+
+    vector<int> sortingAndSwapping(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> ans;
+        int i = 0;
+
+        while(i < n) {
+            int index = nums[i]-1;
+            if (nums[i] != nums[index])
+                swap(nums[i], nums[index]);
+            else 
+                i++;
+        }
+
+        for (int i=0; i<n; i++) {
+            if (nums[i] != i+1)
+                ans.push_back(i+1);
+        }
+
+        return ans;
+    }
+
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        return sortingAndSwapping(nums);
     }
 };
