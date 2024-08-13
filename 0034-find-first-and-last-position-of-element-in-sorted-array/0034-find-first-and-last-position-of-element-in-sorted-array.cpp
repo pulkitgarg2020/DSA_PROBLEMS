@@ -3,7 +3,6 @@ public:
 
     int findRange(vector<int>& nums, int target, bool range) {    
         int first = -1;   
-        bool found = false;
         int s = 0;
         int e = nums.size() - 1;
 
@@ -11,7 +10,6 @@ public:
             int m = (s+e)/2;
             if (nums[m] == target) {
                 first = m;
-                found = true;
                 if (range)
                     e = m-1;
                 else 
@@ -21,9 +19,6 @@ public:
             else 
                 e = m-1;
         }
-        // if (!found) {
-        //     first = -1;
-        // }       
 
         return first;
     }
