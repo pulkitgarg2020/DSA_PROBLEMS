@@ -1,10 +1,5 @@
 class Solution {
 public:
-    void printVector(vector<int>& nums) {
-        for (int i: nums)
-            cout << i << " ";
-        cout << endl;
-    }
     vector<int> findDisappearedNumbers(vector<int>& nums) {
         int n = nums.size();
         vector<int> ans;
@@ -15,8 +10,6 @@ public:
                 continue;
             nums[index] = -nums[index];
         }
-
-        printVector(nums);
 
         for (int j=0; j<n; j++) {
             if (nums[j] > 0)
