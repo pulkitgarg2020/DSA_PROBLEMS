@@ -38,9 +38,7 @@ public:
         }
 
         for (int i=0; i < nums.size(); i++) {
-            if (nums[i] == nums_sorted[l])
-                ans.push_back(i);
-            else if (nums[i] == nums_sorted[r])
+            if (nums[i] == nums_sorted[l] || nums[i] == nums_sorted[r])
                 ans.push_back(i);
         }
         return ans;
