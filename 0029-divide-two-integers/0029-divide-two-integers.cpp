@@ -19,10 +19,9 @@ public:
 
     int divide(int dividend, int divisor) { 
         if (dividend == INT_MIN && divisor == -1) return INT_MAX;
-        if (dividend == INT_MIN && divisor == 1) return INT_MIN;
+        // if (dividend == INT_MIN && divisor == 1) return INT_MIN;
 
         long quot = getQuotient(abs(dividend), abs(divisor));
-        int ans = quot;
 
         if (dividend < 0 && divisor < 0) return quot;
         else if (dividend < 0 || divisor < 0) return -(quot);
