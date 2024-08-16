@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findPivot(vector<int> nums) {
+    int findPivot(vector<int> &nums) {
         int s = 0;
         int n = nums.size();
         int e = n-1;
