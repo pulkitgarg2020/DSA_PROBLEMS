@@ -23,11 +23,10 @@ public:
 
         long quot = getQuotient(abs(dividend), abs(divisor));
         int ans = quot;
-        bool cond = dividend<0;
 
-        if (dividend < 0 && divisor < 0) return ans;
-        else if (dividend < 0 || divisor < 0) return -(ans);
+        if (dividend < 0 && divisor < 0) return quot;
+        else if (dividend < 0 || divisor < 0) return -(quot);
         
-        return ans;
+        return quot;
     }
 };
