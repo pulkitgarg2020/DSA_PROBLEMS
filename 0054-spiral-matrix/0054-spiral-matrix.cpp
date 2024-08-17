@@ -11,7 +11,6 @@ public:
         int s_col = 0;
         
         int count = 0;
-        bool cond = count < r*c;
         while (count < r*c) {
             // printing starting row
             for (int i=s_col; i<=e_col && count < r*c; i++) { 
