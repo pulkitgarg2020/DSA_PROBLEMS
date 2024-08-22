@@ -45,6 +45,19 @@ public:
                 // elements start se leke k tak honge
                 c_start = 0;
                 c_end = k;
+            } else {
+                int l = 0, r = arr.size() - 1;
+
+                while (r - l + 1 > k) {
+                    if (x - arr[l] <= arr[r] - x) {
+                        r--;  // Right side element is farther or equal distance, move `r` left
+                    } else {
+                        l++;  // Left side element is closer, move `l` right
+                    }
+                }
+
+                c_start = l;
+                c_end = r + 1;
             }
         } else {
             // Element exists in the array
