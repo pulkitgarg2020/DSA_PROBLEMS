@@ -6,7 +6,6 @@ public:
         
         while (s < e) {
             int m = s + (e - s) / 2;
-            cout << "M: " << m << endl;
             
             if (a[m] > a[m + 1]) {
                 e = m;  // Move towards the peak on the left
