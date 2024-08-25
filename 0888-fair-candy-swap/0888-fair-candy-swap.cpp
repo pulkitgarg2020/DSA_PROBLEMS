@@ -41,20 +41,15 @@ public:
         int sum_b = calcSum(bobSizes);
         int diff = (sum_a - sum_b) / 2;
 
-        vector<int> ans;
-
         // put bob's in a set
         std::unordered_set<int> s(bobSizes.begin(), bobSizes.end());
 
         for (int i : aliceSizes) {
-            if (s.find(i - diff) != s.end()) {
-                ans.push_back(i);
-                ans.push_back(i - diff);
-                return ans;
-            }
+            if (s.find(i - diff) != s.end())
+                return {i, i-diff};
         }
 
-        return ans;  
+        return {};  
     }
 
     vector<int> fairCandySwap(vector<int>& aliceSizes, vector<int>& bobSizes) {
