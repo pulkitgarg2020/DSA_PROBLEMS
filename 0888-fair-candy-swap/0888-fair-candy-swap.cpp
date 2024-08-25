@@ -58,6 +58,6 @@ public:
     }
 
     vector<int> fairCandySwap(vector<int>& aliceSizes, vector<int>& bobSizes) {
-        return usingBinarySearch(aliceSizes, bobSizes);
+        return usingSet(aliceSizes, bobSizes);
     }
 };
