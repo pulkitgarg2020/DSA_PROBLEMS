@@ -6,7 +6,37 @@ public:
             sum+=i;
         return sum;
     }
-    vector<int> fairCandySwap(vector<int>& aliceSizes, vector<int>& bobSizes) {
+
+    bool binarySearch(vector<int> c, int t) {
+        int s = 0;
+        int e = c.size()-1;
+
+        while (s<=e) {
+            int m = s + (e-s)/2;
+            if (c[m] == t) return true;
+            else if (c[m] < t) s = m+1;
+            else e = m-1; 
+        }
+
+        return false;
+    }
+
+    vector<int> usingBinarySearch(vector<int>& aliceSizes, vector<int>& bobSizes) {
+        int sum_a = calcSum(aliceSizes);
+        int sum_b = calcSum(bobSizes);
+        int diff = (sum_a - sum_b) / 2;
+
+        sort(bobSizes.begin(), bobSizes.end());
+
+        for (int i : aliceSizes) {
+            if(binarySearch(bobSizes, i-diff))
+                return {i, i-diff};
+        }
+
+        return {};
+    }
+
+    vector<int> usingSet(vector<int>& aliceSizes, vector<int>& bobSizes) {
         int sum_a = calcSum(aliceSizes);
         int sum_b = calcSum(bobSizes);
         int diff = (sum_a - sum_b) / 2;
@@ -17,7 +47,6 @@ public:
         std::unordered_set<int> s(bobSizes.begin(), bobSizes.end());
 
         for (int i : aliceSizes) {
-            // Correct the difference to i - diff for checking the condition
             if (s.find(i - diff) != s.end()) {
                 ans.push_back(i);
                 ans.push_back(i - diff);
@@ -25,6 +54,10 @@ public:
             }
         }
 
-        return ans;
+        return ans;  
+    }
+
+    vector<int> fairCandySwap(vector<int>& aliceSizes, vector<int>& bobSizes) {
+        return usingBinarySearch(aliceSizes, bobSizes);
     }
 };
