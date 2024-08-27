@@ -36,4 +36,4 @@ public:
         }
         return sqrt_precision;
     }
-}
+};
