@@ -26,7 +26,6 @@ public:
             if (diff < m) m = diff;
         }
 
-        // Check the difference between the last and first time points (circular difference)
         int circular_diff = (1440 - ans.back() + ans.front());
         m = std::min(m, circular_diff);
 
