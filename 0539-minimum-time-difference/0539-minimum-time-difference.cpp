@@ -4,11 +4,6 @@ public:
         return 60*hour;
     }
 
-    void printVector(vector<int> ans) {
-        for (auto i: ans)
-            cout << i << endl;
-    }
-
     int findMinDifference(vector<string>& s) {
         vector<int> ans;
         int hour, min;
