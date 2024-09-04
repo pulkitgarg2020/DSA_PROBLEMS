@@ -11,8 +11,6 @@ public:
         string ans;
         string elem = strs[0];
         for (int c = 0; c < elem.length(); c++) {
-            string temp = ans;
-            temp+=elem[c];
             if (existInAll(strs, elem[c], c)) ans+=elem[c];
             else break;
         }
