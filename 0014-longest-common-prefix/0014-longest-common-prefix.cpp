@@ -7,7 +7,6 @@ public:
         return true;
     }
     string longestCommonPrefix(vector<string>& strs) {
-        int k = 0;
         string ans;
         string elem = strs[0];
         for (int c = 0; c < elem.length(); c++) {
