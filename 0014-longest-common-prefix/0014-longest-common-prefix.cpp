@@ -13,7 +13,7 @@ public:
         for (int c = 0; c < elem.length(); c++) {
             string temp = ans;
             temp+=elem[c];
-            if (existInAll(strs, elem[c], c) && strs[0].find(temp) != string::npos) ans+=elem[c];
+            if (existInAll(strs, elem[c], c)) ans+=elem[c];
             else break;
         }
         return ans;
