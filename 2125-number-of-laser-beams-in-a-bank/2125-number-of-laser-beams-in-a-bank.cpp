@@ -11,10 +11,11 @@ public:
     int numberOfBeams(vector<string>& bank) {
         vector<int> count(bank.size());
         for (auto s: bank) {
-            if (count_one(s) != 0) count.push_back(count_one(s));
+            int c = count_one(s);
+            if (c != 0) count.push_back(c);
         }
 
-        if (count.size() == 1) return 0;
+        if (count.size() <= 1) return 0;
 
         int sum = 0;
         for (int n=0; n<count.size()-1; n++) {
