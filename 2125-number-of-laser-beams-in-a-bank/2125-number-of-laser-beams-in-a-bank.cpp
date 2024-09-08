@@ -9,7 +9,7 @@ public:
     }
 
     int numberOfBeams(vector<string>& bank) {
-        vector<int> count(bank.size());
+        vector<int> count;
         for (auto s: bank) {
             int c = count_one(s);
             if (c != 0) count.push_back(c);
