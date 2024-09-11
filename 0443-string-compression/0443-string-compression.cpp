@@ -19,7 +19,7 @@ public:
 
             cout << "Count: " << count << endl;
             if (count > 1) {
-                if (count >= 10) s.append(std::to_string(count));
+                if (count >= 9) s.append(std::to_string(count));
                 else s.push_back(count + '0');
             }
             count = 1;
