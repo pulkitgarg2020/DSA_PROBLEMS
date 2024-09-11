@@ -1,31 +1,39 @@
 class Solution {
 public:
-    int compress(vector<char>& chars) {
+
+    int compressUsingTwoLoops(vector<char>& chars) {
         int count = 1;
         string s;
+        int index = 0;
         for (int i = 0; i < chars.size(); i++) {
             // store the current char
             char curr = chars[i];
 
-            cout << "I: " << i << endl;
-            cout << "Current: " << curr << endl;
-
             // push the current char in array
             s.push_back(curr);
+
             while (i < chars.size()-1 && chars[i+1] == curr) {
                 i++;
                 count++;
             }
 
-            cout << "Count: " << count << endl;
+            chars[index++] = curr;
+
             if (count > 1) {
-                if (count >= 9) s.append(std::to_string(count));
-                else s.push_back(count + '0');
+                string str = to_string(count);
+                for (auto c: str) chars[index++] = c;
             }
+
             count = 1;
         }
-        chars = std::vector(s.begin(), s.end());
-        return s.length();
+
+        chars.resize(index);
+
+        return index;
+    }
+
+    int compress(vector<char>& chars) {
+        return compressUsingTwoLoops(chars);
     }
 };
 
