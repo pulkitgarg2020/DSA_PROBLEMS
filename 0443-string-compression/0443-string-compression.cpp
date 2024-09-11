@@ -3,14 +3,10 @@ public:
 
     int compressUsingTwoLoops(vector<char>& chars) {
         int count = 1;
-        string s;
         int index = 0;
         for (int i = 0; i < chars.size(); i++) {
             // store the current char
             char curr = chars[i];
-
-            // push the current char in array
-            s.push_back(curr);
 
             while (i < chars.size()-1 && chars[i+1] == curr) {
                 i++;
