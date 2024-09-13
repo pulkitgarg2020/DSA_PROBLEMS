@@ -18,15 +18,11 @@ public:
             {1, "I"}
         };
         
-        auto it = roman_map.rbegin();
-        while (it != roman_map.rend()) {
-            if (num >= it->first) {
+        for (auto it = roman_map.rbegin(); it != roman_map.rend(); ++it) {
+            while (num >= it->first) {
                 ans.append(it->second);
-                cout << "FIRST: " << it->first << endl;
-                num = num - it->first;
-                cout << "NUM: " << num << endl;
-                auto it = roman_map.rbegin();
-            } else it++;
+                num -= it->first;
+            }
         }
         return ans;
     }
