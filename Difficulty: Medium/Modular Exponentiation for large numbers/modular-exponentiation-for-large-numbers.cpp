@@ -10,12 +10,16 @@ class Solution
 		{
 		    // Code here
 		    long long int ans = 1;
+		    
 		    while (n > 0) {
-		        if (n & 1) ans = (ans * x) % M;
+		        if (n & 1) ans = (ans*x)%M;
+		        
 		        x = (x * x) % M;
-		        n>>=1;
+		        
+		        n = n/2;
 		    }
-		    return ans%M;
+		    
+		    return ans;
 		}
 };
 
