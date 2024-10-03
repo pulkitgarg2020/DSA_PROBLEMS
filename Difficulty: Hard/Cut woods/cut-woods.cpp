@@ -6,33 +6,30 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
+
 class Solution{
     public:
-    
-    bool possibleSolution(vector<int>& v, int k, int mid) {
-        long long sum = 0;
-        for (int i: v) {
-            int elem = i - mid;
-            if (elem > 0) sum+=elem;
-            if (sum >= k) return true;
+    bool possibleSolution(vector<int> &A, int height, int B) {
+        int sum = 0;
+        for (auto tree: A) {
+            if (tree > height) sum+=(tree-height);
         }
-        if (sum < k) return false;
-        return true;
+        
+        return sum >= B;
     }
-    
     int maxHeight(vector<int>&A, int M){
         //Write your code here
-        int n = A.size();
         int s = 0;
-        int e = *max_element(A.begin(), A.end());
-        int ans = -1;
+        int e = *std::max_element(A.begin(), A.end());
+        int ans = 0;
         while (s <= e) {
-            int mid = s+(e-s)/2;
-            if (possibleSolution(A, M, mid)) {
-                ans = mid;
-                s = mid+1;
-            } else e = mid-1;
+            int m = s + (e-s)/2;
+            if (possibleSolution(A, m, M)) {
+                ans = m;
+                s = m + 1;
+            } else e = m - 1;
         }
+        
         return ans;
     }
 };
